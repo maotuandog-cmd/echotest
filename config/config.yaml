@@ -1,0 +1,27 @@
+server:
+  address: "127.0.0.1"
+  port: 80
+  read_timeout: 20s
+  read_header_timeout: 5s
+  write_timeout: 5s
+  idle_timeout: 5s
+  max_header_bytes: 1048576   # 1 << 20
+  shutdown_timeout: 5s
+  body_limit: 102400          # 100KB
+  rate_limit_rate: 10        # 每秒 10 请求
+  rate_limit_burst: 20       # 突发 20
+log:
+  level: info
+jwt:
+  secret: "mycompletedsecret"
+  duration: 24h
+database:
+  driver: postgres
+  host: 192.168.22.227
+  port: 5432
+  user: postgres
+  password: maotuan
+  dbname: urldb
+  ssl_mode: disable
+  max_idle_conns: 5
+  max_open_conns: 5

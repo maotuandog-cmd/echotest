@@ -1,0 +1,9 @@
+version: "2"
+sql:
+  - schema: "database/migrations" # 关联 migrate 的目录
+    queries: "database/queries"    # 存放你自己写的查询语句
+    engine: "postgresql"           # 或 mysql
+    gen:
+      go:
+        package: "db"
+        out: "internal/models"     # 生成代码的目录（建议改掉你的 models 拼写）
